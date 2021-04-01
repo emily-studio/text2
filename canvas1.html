@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #mainCanvas {
+        border: dashed 2px gray;
+    }
+</style>
+
+<body>
+    <canvas id='mainCanvas' width='500' height='500'></canvas>
+
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.24/paper-full.min.js"></script>
+    <script>
+        paper.install(window);
+        paper.setup(document.getElementById('mainCanvas'));
+
+
+        var c = Shape.Circle(250, 250, 100);
+        c.fillColor = 'pink';
+        var c = Shape.Circle(160, 160, 60);
+        c.fillColor = 'pink';
+        var c = Shape.Circle(330, 160, 60);
+        c.fillColor = 'pink';
+
+
+        var text = new PointText(250, 250);
+        text.justification = 'center';
+        text.fillColor = 'yellow';
+        text.fontSize = '20';
+        text.content = 'hello world';
+
+
+
+        paper.view.draw()
+
+    </script>
+</body>
+
+</html>
