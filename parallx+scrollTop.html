@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax</title>
+    <style>
+        body {
+            margin: 0;
+            height: 300vh;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 50px;
+            background-color: gray;
+            position: fixed;
+        }
+
+        .progressBar {
+            background-color: rgb(164, 194, 219);
+            height: 50px;
+            width: 10%;
+
+        }
+
+        .box {
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+
+        }
+
+        .box1 {
+            background: url(./photo/bcm3.webp)center bottom no-repeat;
+
+            background-size: auto;
+        }
+
+        .box2 {
+            background: url(./photo/mspgqkkkky.jpeg)center bottom no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-size: auto;
+        }
+
+        .box3 {
+            background: url(./photo/bcm4.jpeg)center no-repeat;
+            ;
+            background-size: cover;
+            background-size: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="progressBar"></div>
+    </div>
+
+    <div class="box box1">
+
+    </div>
+
+    <div class="box box2">
+
+    </div>
+    <div class="box box3">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        let totalHeight = $('body').height();
+        let sawHeight = $(window).height();
+
+        $(window).scroll(function () {
+            console.log(Math.round($(this).scrollTop() / (totalHeight - sawHeight) * 100) + '%');
+            let width = Math.round($(this).scrollTop() / (totalHeight - sawHeight) * 100) + '%';
+            $('.progressBar').css('width', width);
+
+        })
+
+    </script>
+
+</body>
+
+</html>

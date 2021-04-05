@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append</title>
+    <style>
+        body {
+            background: rgba(80, 100, 57, 0.397);
+        }
+
+        .nav {
+            font-size: 20px;
+            list-style: none;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            z-index: 3;
+            width: 100%;
+            background-color: rgba(75, 99, 134, 0.315);
+            font-family: "adobe-caslon-pro", serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-item {
+
+            margin: 10px 20px;
+        }
+
+        .active {
+            color: #507688;
+        }
+
+        .active:hover {
+            color: rgb(143, 160, 95);
+        }
+
+        .box {
+
+            padding: 80px 0;
+            width: 100%;
+            height: auto;
+            padding-top: 200px;
+            background: url(./photo/資產\ 1.png) center center no-repeat;
+
+        }
+
+        .btn {
+            float: right;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar1  navbar-fixed-top">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="./home.html"><i class="fa fa-fw fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="./aboutme.html"><i class="fa fa-fw fa-user-circle"></i> About
+                    me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="./Design.html"><i class="fa fa-fw  fa-lightbulb-o"></i>
+                    Design</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="./comingsoon.html"><i class="fa fa-fw fa-calendar"
+                        aria-hidden="true"></i>
+                    Booking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="./login-page.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="box">
+            <button onclick="add()" class="btn btn-info">增加人數</button>
+            <div id="myDiv">
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+<script>
+    // $('#add').click(function () {
+    //     $('#myDiv').attr('src', './photo/svg/gardener.svg');
+    //     console.log(myDiv);
+    // })
+
+    function add() {
+        let img = document.createElement("img")
+        img.setAttribute('src', './photo/svg/gardener.svg');
+        img.width = "50";
+        img.height = "50";
+        document.getElementById("myDiv").appendChild(img);
+    }
+
+</script>
+
+</html>
